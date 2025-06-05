@@ -61,12 +61,21 @@
 <body>
     <div class="container">
         <h1>Bajas de Contactos</h1>
-        <form action="bajas2.php" method="post">
+        <form id="formBaja" action="bajas2.php" method="post">
             <label for="id_alumno">Ingrese el ID del contacto a borrar:</label>
             <input type="number" name="id_alumno" id="id_alumno" required>
             <input type="submit" value="Borrar">
         </form>
     </div>
+
+    <script>
+        // Confirmación antes de enviar el formulario
+        document.getElementById("formBaja").addEventListener("submit", function(e) {
+            const confirmado = confirm("¿Estás seguro de que deseas eliminar este contacto?");
+            if (!confirmado) {
+                e.preventDefault(); // Cancela el envío si el usuario elige "Cancelar"
+            }
+        });
+    </script>
 </body>
 </html>
-        

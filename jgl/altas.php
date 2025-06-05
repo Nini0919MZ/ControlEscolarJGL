@@ -1,86 +1,85 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<title>Alta de alumnos</title>
+    <meta charset="UTF-8">
+    <title>Alta de alumnos</title>
     <link rel="icon" href="logo.ico" type="image/x-icon">
 
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color:#434347;
-        padding: 40px;
-        display: flex;
-        justify-content: center;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    form {
-        background-color:black;
-        padding: 30px 40px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        width: 350px;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #434347;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    h1 {
-        text-align: center;
-        color:white;
-        margin-bottom: 25px;
-    }
+        form {
+            background-color: black;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+        }
 
-    label {
-        display: block;
-        margin-bottom: 6px;
-        font-weight: 600;
-        color: white;
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 25px;
+        }
 
-CLos pinches favos
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: white;
+        }
 
+        input[type="number"],
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 20px;
+            border: 1.8px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
 
+        input[type="number"]:focus,
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus {
+            border-color: white;
+            outline: none;
+        }
 
+        input[type="submit"] {
+            width: 100%;
+            background-color: rgb(30, 8, 233);
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-
-
-
-
-
-
-
-
-    }
-
-    input[type="number"],
-    input[type="text"] {
-        width: 100%;
-        padding: 10px 12px;
-        margin-bottom: 20px;
-        border: 1.8px solid #ccc;
-        border-radius: 6px;
-        font-size: 14px;
-        transition: border-color 0.3s;
-    }
-
-    input[type="number"]:focus,
-    input[type="text"]:focus {
-        border-color:rgb(255, 255, 255);
-        outline: none;
-    }
-
-    input[type="submit"] {
-        width: 100%;
-        background-color:rgb(30, 8, 233);
-        color: white;
-        padding: 12px;
-        font-size: 16px;
-        font-weight: 700;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    input[type="submit"]:hover {
-        background-color: gray;
-    }
-</style>
+        input[type="submit"]:hover {
+            background-color: gray;
+        }
+    </style>
 </head>
 <body>
     <form action="altas2.php" method="post">
@@ -93,10 +92,10 @@ CLos pinches favos
         <input type="text" id="nombre" name="nombre" required>
 
         <label for="correo">Ingrese Correo:</label>
-        <input type="text" id="correo" name="correo" required>
+        <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
 
         <label for="telefono">Ingrese Teléfono:</label>
-        <input type="number" id="telefono" name="telefono" required>
+        <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10}" title="El teléfono debe tener exactamente 10 dígitos" placeholder="1234567890">
 
         <input type="submit" value="Registrar">
     </form>
